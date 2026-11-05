@@ -1,5 +1,5 @@
 'use strict';
-const CACHE='omat-tunnit-offline-v2';
+const CACHE='omat-tunnit-offline-v3';
 const FILES=['./','./index.html','./app.js','./offline.js','./manifest.webmanifest','./icon.svg','./icon-180.png','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',event=>event.waitUntil((async()=>{const cache=await caches.open(CACHE);await cache.addAll(FILES.map(url=>new Request(url,{cache:'reload'})));await self.skipWaiting()})()));
 self.addEventListener('activate',event=>event.waitUntil((async()=>{await self.clients.claim()})()));
